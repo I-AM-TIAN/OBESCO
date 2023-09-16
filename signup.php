@@ -36,11 +36,11 @@ if (isset($_POST)) {
     <div class="registration form">
       <header>Signup</header>
       <form action="" method="POST">
-      <input type="text" placeholder="Ingrese su nombre de usuario" id="user_name">
-        <input type="text" placeholder="Ingrese su email" id="email">
-        <input type="password" placeholder="Ingrese una contraseña" id="password">
-        <input type="text" placeholder="Ingrese su nombre" id="name">
-        <input type="text" placeholder="Ingrese su apellido" id="lastname">
+      <input type="text" placeholder="Ingrese su nombre de usuario" id="user_name" name="user_name">
+        <input type="text" placeholder="Ingrese su email" id="email" name="email">
+        <input type="password" placeholder="Ingrese una contraseña" id="password" name="password">
+        <input type="text" placeholder="Ingrese su nombre" id="name" name="name">
+        <input type="text" placeholder="Ingrese su apellido" id="lastname" name="lastname">
         <input type="submit" class="button" value="Signup">
       </form>
       <div class="signup">

@@ -30,7 +30,6 @@ nav{
 
 .logo{
     text-decoration: none;
-    color: blue;
 }
 
 .page1-hide{
@@ -91,8 +90,6 @@ nav{
     border-radius: 8px;
     background-color: #4070f4;
 }
-
-
 
 .container form .title{
     display: block;
@@ -238,4 +235,8 @@ nav{
     form .fields .input-field{
         width: 100%;
     }
+}
+
+.username{
+    right: 90;
 }
