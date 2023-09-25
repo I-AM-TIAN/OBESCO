@@ -12,7 +12,7 @@ if (isset($_POST)) {
     if($query){
       header('Location: index.php');
     }else{
-      
+      echo '<script>alert("Error de registro");</script>';
     }
   }
 }

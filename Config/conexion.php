@@ -2,7 +2,7 @@
     $host = "localhost";
     $user = "root";
     $clave = "";
-    $bd = "obesco2";
+    $bd = "obesco_bdd";
     $port="3312";
     $conexion = mysqli_connect($host,$user,$clave,$bd,$port);
     if (mysqli_connect_errno()){
