@@ -44,17 +44,25 @@ $query = mysqli_query($conexion, $sql);
                 $row_tipo1 = mysqli_fetch_array($query_tipo1);
             ?>
                 <div id="card" class="card">
-                    <img class="logo" src="../images/Logo-directorio.jpg" alt="">
+                    <img class="logo1" src="../images/Logo-directorio.jpg" alt="">
                     <hr>
                     <h4><?php echo $row['nombre'] . "<br>"; ?></h4>
                     <h4><?php echo $row['Año_fundacion'] . "<br>"; ?></h4>
                     <hr>
-                    <p class="redes"><?php echo $row['redes_sociales'] . "<br>"; ?></p>
-                    <hr>
                     <p><?php echo $row_tipo['tipo'] . "<br>"; ?></p>
+                    <hr>
                     <p><?php echo $row_tipo1['Sector'] . "<br>"; ?></p>
                     <hr>
-                    <p class="descripcion"><?php echo $row['Descripcion'] . "<br>"; ?></p>
+                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, sint, delectus quos atque perspiciatis dolorum, praesentium libero illum excepturi rerum saepe. Deleniti maxime expedita veniam nostrum perspiciatis modi beatae quisquam adipisci? Eum fugiat, beatae dolore placeat laboriosam ea soluta non. Aliquam, laudantium? Dolore magni sunt neque placeat molestiae optio excepturi!</p>
+                    <hr>
+                    <div class="redesc">
+                        <a href="<?php echo $row['pagina_web'] . "<br>"; ?>">
+                            <img src="../images/redes_sociales/paginaweb.png" alt="">
+                        </a>
+                        <a href="<?php echo $row['redes_sociales'] . "<br>"; ?>">
+                            <img src="../images/redes_sociales/redessociales.png" alt="">
+                        </a>
+                    </div>
                 </div>
             <?php
             }
