@@ -16,9 +16,9 @@
   ?>
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-color: rebeccapurple"></div>
-      <div class="swiper-slide" style="background-color: rebeccapurple"></div>
-      <div class="swiper-slide" style="background-color: greenyellow"></div>
+      <div class="swiper-slide" ><img src="images/OBESCO.png" alt=""></div>
+      <div class="swiper-slide" ></div>
+      <div class="swiper-slide" ></div>
     </div>
     <div class="swiper-pagination"></div>
   </div>
