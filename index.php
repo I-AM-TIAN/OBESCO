@@ -2,6 +2,7 @@
 session_start();
 if (!empty($_SESSION['active'])) {
   header('location: welcome.php');
+  session_destroy();
 } else {
   if (!empty($_POST)) {
     $alert = '';
@@ -20,6 +21,7 @@ if (!empty($_SESSION['active'])) {
       $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE user_name = '$user' AND password = '$password'");
       mysqli_close($conexion);
       $resultado = mysqli_num_rows($query);
+      echo "<script>console.log('Console: " . $resultado . "' );</script>";
       if ($resultado > 0) {
         $dato = mysqli_fetch_array($query);
         $_SESSION['active'] = true;
@@ -29,6 +31,7 @@ if (!empty($_SESSION['active'])) {
         $_SESSION['password'] = $dato['password'];
         $_SESSION['Apellido'] = $dato['Apellido'];
         $_SESSION['Nombre'] = $dato['Nombre'];
+        
         header('location: ./Forms/welcome.php');
       } else {
         echo $alert;

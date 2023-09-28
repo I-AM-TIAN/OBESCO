@@ -599,12 +599,8 @@ echo "<script>console.log('Console: " . $sec_1 . "' );</script>";
       </form>
     </div>
   </div>
-  <script src="../controller/ubicaciones.js"></script>
-  <script src="../controller/transiciones.js">
-    let seccion1 = '<?php echo $sec_1  ?>';
-    let seccion2 = '<?php echo $sec_2  ?>';
-    let seccion3 = '<?php echo $sec_3  ?>';
-  </script>
+  <script src="../controller/ubicacionesc.js"></script>
+  <script src="../controller/transiciones.js"></script>
   <script src="../controller/validaciones.js"></script>
 </body>
 

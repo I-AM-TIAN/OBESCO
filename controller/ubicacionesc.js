@@ -62,7 +62,7 @@ function getMunicipios() {
             });
 
             //recorremos el arreglo y vamos creando un option por cada objeto que se encuentra en el array y extraemos el municipio
-            dataArray.sort();
+
             dataArray.forEach(objeto => {
                 const option = document.createElement('option');
                 option.value = objeto.municipio;
