@@ -1,5 +1,5 @@
 <?php
-require_once "../Config/conexion.php";
+require_once "../../Config/conexion.php";
 session_start();
 $usuario = $_SESSION['id_user'];
 $buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");

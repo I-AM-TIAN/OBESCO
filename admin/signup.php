@@ -1,5 +1,5 @@
 <?php
-require_once "./Config/conexion.php";
+require_once "../OBESCO/Config/conexion.php";
 
 if (isset($_POST)) {
   if (!empty($_POST)) {

@@ -15,7 +15,7 @@ if (!empty($_SESSION['active'])) {
                     </div>';
       echo $alert;
     } else {
-      require_once "Config/conexion.php";
+      require_once "../Config/conexion.php";
       $user = mysqli_real_escape_string($conexion, $_POST['user_name']);
       $password = mysqli_real_escape_string($conexion, $_POST['password']);
       $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE user_name = '$user' AND password = '$password'");
