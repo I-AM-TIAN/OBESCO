@@ -1,5 +1,5 @@
 <?php
-require_once "../OBESCO/Config/conexion.php";
+require_once "../Config/conexion.php";
 
 if (isset($_POST)) {
   if (!empty($_POST)) {
@@ -9,9 +9,9 @@ if (isset($_POST)) {
     $apellido = $_POST['lastname'];
     $nombre = $_POST['name'];
     $query = mysqli_query($conexion, "INSERT INTO usuarios(user_name, email, password, Apellido, Nombre) VALUES ('$user', '$email', '$password', '$apellido', '$nombre')");
-    if($query){
+    if ($query) {
       header('Location: index.php');
-    }else{
+    } else {
       echo '<script>alert("Error de registro");</script>';
     }
   }
@@ -28,7 +28,7 @@ if (isset($_POST)) {
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login & Registration Form</title>
   <!---Custom CSS File--->
-  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/admin.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@ if (isset($_POST)) {
     <div class="registration form">
       <header>Signup</header>
       <form action="" method="POST">
-      <input type="text" placeholder="Ingrese su nombre de usuario" id="user_name" name="user_name">
+        <input type="text" placeholder="Ingrese su nombre de usuario" id="user_name" name="user_name">
         <input type="text" placeholder="Ingrese su email" id="email" name="email">
         <input type="password" placeholder="Ingrese una contraseña" id="password" name="password">
         <input type="text" placeholder="Ingrese su nombre" id="name" name="name">
