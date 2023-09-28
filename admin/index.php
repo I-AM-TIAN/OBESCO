@@ -53,8 +53,7 @@ if (!empty($_SESSION['active'])) {
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>OBESCO</title>
   <!---Custom CSS File--->
-  <link rel="stylesheet" href="./styles/index.css">
-  <link rel="stylesheet" href="./styles/alerts.css">
+  <link rel="stylesheet" href="./styles/admin.css">
 
 </head>
 

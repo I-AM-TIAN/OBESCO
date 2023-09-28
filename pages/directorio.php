@@ -1,5 +1,5 @@
 <?php
-require_once('../db/conexion.php');
+require_once('../Config/conexion.php');
 
 $sql = "SELECT * FROM organizaciones";
 $query = mysqli_query($conexion, $sql);
