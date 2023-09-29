@@ -26,12 +26,14 @@ if (isset($_POST)) {
       $aso111 = $_POST['aso111'];
       $aso112 = $_POST['aso112'];
       $aso113 = $_POST['aso113'];
+      $proms1 = ($aso11+$aso12+$aso13+$aso14+$aso15+$aso16+$aso17+$aso18+$aso19+$aso110+$aso111+$aso112+$aso113)/13;
+
 
       $buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");
       $resultado = mysqli_fetch_array($buscar_org);
       $id_org = $resultado['id_organizacion'];
 
-      $insert_sec1 = mysqli_query($conexion, "INSERT INTO asociatividad(aso11,aso12,aso13,aso14,aso15,aso16,aso17,aso18,aso19,aso110,aso111,aso112,aso113,id_organizacion)VALUES($aso11,$aso12,$aso13,$aso14,$aso15,$aso16,$aso17,$aso18,$aso19,$aso110,$aso111,$aso112,$aso113,$id_org)");
+      $insert_sec1 = mysqli_query($conexion, "INSERT INTO asociatividad(aso11,aso12,aso13,aso14,aso15,aso16,aso17,aso18,aso19,aso110,aso111,aso112,aso113,proms1,id_organizacion)VALUES($aso11,$aso12,$aso13,$aso14,$aso15,$aso16,$aso17,$aso18,$aso19,$aso110,$aso111,$aso112,$aso113,$proms1,$id_org)");
       if ($insert_sec1) {
         $transition = mysqli_query($conexion, "UPDATE organizaciones SET Section_a = 1 WHERE id_usuario = '$usuario'");
       }
@@ -44,7 +46,12 @@ if (isset($_POST)) {
       $aso26 = $_POST['aso26'];
       $aso27 = $_POST['aso27'];
       $aso28 = $_POST['aso28'];
-      $insert_sec2 = mysqli_query($conexion, "UPDATE asociatividad SET aso21 = $aso21, aso22 = $aso22, aso23 = $aso23, aso24 = $aso24, aso25 = $aso25, aso26 = $aso26 , aso27 = $aso27, aso28 = $aso28");
+      $proms2 = ($aso21+$aso22+$aso23+$aso24+$aso25+$aso26+$aso27+$aso28)/8;
+
+      $buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");
+      $resultado = mysqli_fetch_array($buscar_org);
+      $id_org = $resultado['id_organizacion'];
+      $insert_sec2 = mysqli_query($conexion, "UPDATE asociatividad SET aso21 = $aso21, aso22 = $aso22, aso23 = $aso23, aso24 = $aso24, aso25 = $aso25, aso26 = $aso26 , aso27 = $aso27, aso28 = $aso28, proms2 = $proms2 WHERE id_organizacion = $id_org");
       if ($insert_sec2) {
         $transition = mysqli_query($conexion, "UPDATE organizaciones SET Section_a = 2 WHERE id_usuario = '$usuario'");
       }
@@ -66,7 +73,11 @@ if (isset($_POST)) {
       $aso315 = $_POST['aso315'];
       $aso316 = $_POST['aso316'];
       $aso317 = $_POST['aso317'];
-      $insert_sec3 = mysqli_query($conexion, "UPDATE asociatividad SET aso31 = $aso31, aso32 = $aso32, aso33 = $aso33, aso34 = $aso34, aso35 = $aso35, aso36 = $aso36 , aso37 = $aso37, aso38 = $aso38, aso39 = $aso39, aso310 = $aso310, aso311 = $aso311, aso312 = $aso312, aso313 = $aso313, aso314 = $aso314 , aso315 = $aso315, aso316 = $aso316, aso317 = $aso317");
+      $proms3 = ($aso31+$aso32+$aso33+$aso34+$aso35+$aso36+$aso37+$aso38+$aso39+$aso310+$aso311+$aso312+$aso313+$aso314+$aso315+$aso316+$aso317)/17;
+      $buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");
+      $resultado = mysqli_fetch_array($buscar_org);
+      $id_org = $resultado['id_organizacion'];
+      $insert_sec3 = mysqli_query($conexion, "UPDATE asociatividad SET aso31 = $aso31, aso32 = $aso32, aso33 = $aso33, aso34 = $aso34, aso35 = $aso35, aso36 = $aso36 , aso37 = $aso37, aso38 = $aso38, aso39 = $aso39, aso310 = $aso310, aso311 = $aso311, aso312 = $aso312, aso313 = $aso313, aso314 = $aso314 , aso315 = $aso315, aso316 = $aso316, aso317 = $aso317, proms3 = $proms3 WHERE id_organizacion = $id_org");
       if ($insert_sec3) {
         $transition = mysqli_query($conexion, "UPDATE organizaciones SET Section_a = 3 WHERE id_usuario = '$usuario'");
       }
@@ -80,7 +91,11 @@ if (isset($_POST)) {
       $aso47 = $_POST['aso47'];
       $aso48 = $_POST['aso48'];
       $aso49 = $_POST['aso49'];
-      $insert_sec4 = mysqli_query($conexion, "UPDATE asociatividad SET aso41 = $aso41, aso42 = $aso42, aso43 = $aso43, aso44 = $aso44, aso45 = $aso45, aso46 = $aso46 , aso47 = $aso47, aso48 = $aso48, aso49 = $aso49");
+      $proms4 = ($aso41+$aso42+$aso43+$aso44+$aso45+$aso46+$aso47+$aso48+$aso49)/9;
+      $buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");
+      $resultado = mysqli_fetch_array($buscar_org);
+      $id_org = $resultado['id_organizacion'];
+      $insert_sec4 = mysqli_query($conexion, "UPDATE asociatividad SET aso41 = $aso41, aso42 = $aso42, aso43 = $aso43, aso44 = $aso44, aso45 = $aso45, aso46 = $aso46 , aso47 = $aso47, aso48 = $aso48, aso49 = $aso49, proms4 = $proms4 WHERE id_organizacion = $id_org");
       if ($insert_sec4) {
         $transition = mysqli_query($conexion, "UPDATE organizaciones SET Section_a = 4 WHERE id_usuario = '$usuario'");
       }
@@ -94,7 +109,11 @@ if (isset($_POST)) {
       $aso57 = $_POST['aso57'];
       $aso58 = $_POST['aso58'];
       $aso59 = $_POST['aso59']; 
-      $insert_sec5 = mysqli_query($conexion, "UPDATE asociatividad SET aso51 = $aso51, aso52 = $aso52, aso53 = $aso53, aso54 = $aso54, aso55 = $aso55, aso56 = $aso56 , aso57 = $aso57, aso58 = $aso58, aso59 = $aso59");
+      $proms5 = ($aso51+$aso52+$aso53+$aso54+$aso55+$aso56+$aso57+$aso58+$aso59)/9;
+      $buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");
+      $resultado = mysqli_fetch_array($buscar_org);
+      $id_org = $resultado['id_organizacion'];
+      $insert_sec5 = mysqli_query($conexion, "UPDATE asociatividad SET aso51 = $aso51, aso52 = $aso52, aso53 = $aso53, aso54 = $aso54, aso55 = $aso55, aso56 = $aso56 , aso57 = $aso57, aso58 = $aso58, aso59 = $aso59, proms5 = $proms5 WHERE id_organizacion = $id_org");
       if ($insert_sec5) {
         $transition = mysqli_query($conexion, "UPDATE organizaciones SET Section_a = 5 WHERE id_usuario = '$usuario'");
       }
@@ -107,8 +126,13 @@ if (isset($_POST)) {
       $aso66 = $_POST['aso66'];
       $aso67 = $_POST['aso67'];
       $aso68 = $_POST['aso68'];
-      $insert_sec5 = mysqli_query($conexion, "UPDATE asociatividad SET aso61 = $aso61, aso62 = $aso62, aso63 = $aso63, aso64 = $aso64, aso65 = $aso65, aso66 = $aso66 , aso67 = $aso67, aso68 = $aso68");
-      if ($insert_sec5) {
+      $proms6 = ($aso61+$aso62+$aso63+$aso64+$aso65+$aso66+$aso67+$aso68)/8;
+      $proma = ($proms1 + $proms2 + $proms3 + $proms4 + $proms5 + $proms6)/6;
+      $buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");
+      $resultado = mysqli_fetch_array($buscar_org);
+      $id_org = $resultado['id_organizacion'];
+      $insert_sec6 = mysqli_query($conexion, "UPDATE asociatividad SET aso61 = $aso61, aso62 = $aso62, aso63 = $aso63, aso64 = $aso64, aso65 = $aso65, aso66 = $aso66 , aso67 = $aso67, aso68 = $aso68, proms6 = $proms6, proma = $proma WHERE id_organizacion = $id_org");
+      if ($insert_sec6) {
         $transition = mysqli_query($conexion, "UPDATE organizaciones SET Section_a = 6 WHERE id_usuario = '$usuario'");
       }
     }
@@ -124,7 +148,7 @@ if ($validar > 0) {
   $datos = mysqli_fetch_array($querys);
   $sec_a = $datos['Section_a'];
   if($sec_a == 6){
-    header('location: finalizado.php');
+    header('location: finalizadoA.php');
   }
 } else {
   $sec_a = 0;
