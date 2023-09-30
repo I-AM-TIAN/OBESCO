@@ -17,7 +17,18 @@ if (isset($_POST)) {
       $sector_eco = $_POST['sec-e'];
       $sit_geo = $_POST['sit-g'];
       $ubigeo = $_POST['ubi-g'];
-      $query = mysqli_query($conexion, "INSERT INTO `organizaciones` (`id_organizacion`, `nombre`, `id_tipoorg`, `redes_sociales`, `pagina_web`, `Año_fundacion`, `logo`, `id_sectoreco`, `id_situaciongeo`, `idubi_geo`, `Descripcion`, `id_usuario`, `Section_1`) VALUES (NULL, '$nom', $tipo_org, '$redes', '$sitio', $año, NULL, $sector_eco, $sit_geo, $ubigeo, '$desc', $usuario, '1');");
+      $img = $_FILES['logo'];
+      $name = $img['name'];
+      $tmpname = $img['tmp_name'];
+      $fecha = date("YmdHis");
+      $foto = $fecha . ".jpg";
+      $destino = "uploads/" . $foto;
+      $query = mysqli_query($conexion, "INSERT INTO `organizaciones` (`id_organizacion`, `nombre`, `id_tipoorg`, `redes_sociales`, `pagina_web`, `Año_fundacion`, `logo`, `id_sectoreco`, `id_situaciongeo`, `idubi_geo`, `Descripcion`, `id_usuario`, `Section_1`) VALUES (NULL, '$nom', $tipo_org, '$redes', '$sitio', $año, '$foto', $sector_eco, $sit_geo, $ubigeo, '$desc', $usuario, '1');");
+      if ($query) {
+        if (move_uploaded_file($tmpname, $destino)) {
+            header('Location: caracterizacion.php');
+        }
+    }
 
       $departamento = $_POST['dep'];
       $municipio = $_POST['mun'];
@@ -138,7 +149,7 @@ if (isset($_POST)) {
         $idorg = $datoo['id_organizacion'];
 
         $caracterizar2 = mysqli_query($conexion, "UPDATE caracterizacion SET totalemp = $totalemp, empleados29 = $empleados29, empleados56 = $empleados56, empleados18 = $empleados18, empleados1s = $empleados1s, empleados12s = $empleados12s, empleados23s = $empleados23s, empleados4s = $empleados4s, empleadosarl = $empleadosarl, empleadospen = $empleadospen, empleadossal = $empleadossal, empleadosru = $empleadosru, empleadosur = $empleadosur, empleadosdis = $empleadosdis, empleadoshom = $empleadoshom, empleadoshdiv = $empleadoshdiv, empleadosmuj = $empleadosmuj, empleadosmdiv = $empleadosmdiv WHERE`id_organizacion` = $idorg;");
-        if($caracterizar2){
+        if ($caracterizar2) {
           $transition = mysqli_query($conexion, "UPDATE organizaciones SET Section_1 = 3 WHERE id_usuario = '$usuario'");
         }
       }
@@ -154,7 +165,7 @@ if ($validar > 0) {
   $querys = mysqli_query($conexion, "SELECT Section_1 FROM organizaciones WHERE id_organizacion = '$idorg'");
   $datos = mysqli_fetch_array($querys);
   $sec_1 = $datos['Section_1'];
-  if($sec_1 == 3){
+  if ($sec_1 == 3) {
     header('location: finalizado.php');
   }
 } else {
@@ -189,9 +200,9 @@ echo "<script>console.log('Console: " . $sec_1 . "' );</script>";
     <!-- Input oculto para validar seccion del formulario -->
 
     <input type="hidden" id="validacion" value="<?php echo $sec_1 ?>" />
-    
+
     <div id="p1" class="page1">
-      <form action="" method="POST">
+      <form action="" method="POST" enctype="multipart/form-data">
         <div class="company data">
           <p>
             A continuación usted ingresará los datos generales de la empresa
@@ -231,8 +242,8 @@ echo "<script>console.log('Console: " . $sec_1 . "' );</script>";
             </div>
 
             <div class="input-field">
-              <label>Logo</label>
-              <input type="file" id="logo-org" name="logo-org" accept="image/*" required />
+              <label for="logo">Logo</label>
+              <input type="file" name="logo" accept="image/*" required />
             </div>
 
             <div class="input-field">
