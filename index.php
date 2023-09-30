@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./styles/index.css" />
   <link rel="stylesheet" href="./styles/general.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <title>Home</title>
 </head>
 
@@ -14,15 +13,23 @@
   <?php
   include("./template/nav.php");
   ?>
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"></div>
-      <div class="swiper-slide"></div>
-      <div class="swiper-slide"></div>
-      <div class="swiper-slide"></div>
-    </div>
-    <div class="swiper-pagination"></div>
+  <div class="slider-box">
+    <ul id="slider">
+      <li>
+        <img src="./images/OBESCO.png" alt="">
+      </li>
+      <li>
+        <img src="./images/OBESCOW.png" alt="">
+      </li>
+      <li>
+        <img src="./images/OBESCO.png" alt="">
+      </li>
+      <li>
+        <img src="./images/OBESCOW.png" alt="">
+      </li>
+    </ul>
   </div>
+
   <div class="contenido">
     <?php
     include("./template/options.php");
@@ -38,21 +45,6 @@
     </div>
   </div>
   <script src="./controller/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper(".swiper", {
-      direction: "horizontal",
-      loop: true,
-      effect: "fade",
-      autoplay: {
-        delay: 1000,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-  </script>
   <?php
   include("./template/footer.php");
   ?>

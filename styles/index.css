@@ -9,13 +9,43 @@
 
 /* Seccion del slider de imagenes */
 
-.swiper {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    width: 95%;
-    height: 300px;
-  }
+.slider-box{
+    width: 1280px;
+    height: 325px;
+    margin: 40px auto 0;
+    overflow: hidden;
+}
 
+.slider-box ul {
+    display: flex;
+    padding: 0;
+    width: 100%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-box li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+.slider-box img{
+    width: 1280px;
+    border-radius: 8px;
+}
+
+@keyframes slide {
+    0% { margin-left: 0; }
+    25% { margin-left: 0; }
+
+    30% { margin-left: -100%; }
+    55% { margin-left: -100%; }
+
+    60% { margin-left: -200%; }
+    85% { margin-left: -200%; }
+
+    90% { margin-left: -300%; }
+    100% { margin-left: -300%; }
+}
 
 
 /* Seccion del contenido de la pagina */
