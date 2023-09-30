@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para obtener los datos
-$sql = "SELECT proms1, proms2, proms3, proms4, proms5, proms6, id_organizacion FROM asociatividad WHERE id_organizacion = $id_org";
+$sql = "SELECT proms1, proms2, proms3, proms4, proms5, proms6 FROM asociatividad WHERE id_organizacion = $id_org";
 
 $result = $conn->query($sql);
 
@@ -31,12 +31,12 @@ $data[] = ['Section', 'Promedio'];
 
 while ($row = $result->fetch_assoc()) {
     $i = 0;
-    $data[] = [(int)$row['id_organizacion'],'Desarrollo de la asociatividad', (float)$row['proms1']];
-    $data[] = [(int)$row['id_organizacion'],'Generación de trabajo, ingresos, calidad de vida', (float)$row['proms2']];
-    $data[] = [(int)$row['id_organizacion'],'Capacidad de gestión empresarial', (float)$row['proms3']];
-    $data[] = [(int)$row['id_organizacion'],'Capacidades de mercadeo', (float)$row['proms4']];
-    $data[] = [(int)$row['id_organizacion'],'Capacidades productivas', (float)$row['proms5']];
-    $data[] = [(int)$row['id_organizacion'],'Capacidades para el servicio', (float)$row['proms6']];
+    $data[] = ['Desarrollo de la asociatividad', (float)$row['proms1']];
+    $data[] = ['Generación de trabajo, ingresos, calidad de vida', (float)$row['proms2']];
+    $data[] = ['Capacidad de gestión empresarial', (float)$row['proms3']];
+    $data[] = ['Capacidades de mercadeo', (float)$row['proms4']];
+    $data[] = ['Capacidades productivas', (float)$row['proms5']];
+    $data[] = ['Capacidades para el servicio', (float)$row['proms6']];
 }
 
 
