@@ -3,6 +3,7 @@ require_once('../Config/conexion.php');
 
 $sql = "SELECT * FROM organizaciones";
 $query = mysqli_query($conexion, $sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -44,7 +45,7 @@ $query = mysqli_query($conexion, $sql);
                 $row_tipo1 = mysqli_fetch_array($query_tipo1);
             ?>
                 <div id="card" class="card">
-                    <img class="logo1" src="../images/Logo-directorio.jpg" alt="">
+                    <img class="logocard" src="../admin/Forms/uploads/<?php echo $row['logo']; ?>" alt="">
                     <hr>
                     <h4><?php echo $row['nombre'] . "<br>"; ?></h4>
                     <h4><?php echo $row['Año_fundacion'] . "<br>"; ?></h4>

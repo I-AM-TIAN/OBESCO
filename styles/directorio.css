@@ -14,7 +14,6 @@
     height: 1000px;
     margin: 50px auto;
     display: grid;
-    align-items: center;
     grid-template-columns: 0.4fr 1fr;
     gap: 50px;
 }
@@ -42,18 +41,27 @@
     border-radius: 0.25em;
 }
 .card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px rgba(120,120,120,1);
-    text-align: center;
+    text-align: center; 
+    align-items: center;
     padding: 10px;
-    height: 450px;
+    height: 470px;
     max-width: 267px;
     width: 267px;
 }
-.logo1{
-    height: 100px;
+.logocard{
     border-radius: 50%;
-    border: 1px solid;
+    border: 0.5px solid rgba(120,120,120,1);
+    padding: 3px;
+    height: 140px;
+    width: 130px;
+    margin-bottom: 10px;
+    object-fit: contain;
+
 }
 .card h4{
     font-size: 14px;
@@ -63,9 +71,11 @@
 }
 .card hr{
     margin: 5px 0px 5px 0px;
+    width: 100%;
 }
 .redesc{
-    margin: 10px;
+    width: 100%;
+    bottom: 0;
     font-size: 9px;
     display: flex;
     justify-content: center;
@@ -76,5 +86,9 @@ height: 40px;
 
 }
 .descripcion{
-    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    flex-grow: 1;
 }
