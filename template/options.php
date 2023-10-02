@@ -64,9 +64,9 @@
                 <h1>RECURSOS</h1>
 
             </div>
-            <ul class="list__show">
+            <ul id="recursos" class="list__show">
                 <li class="list__inside">
-                    <a href="./pages/directorio.php" class="link link--inside">
+                    <a href="/pages/directorio.php" class="link link--inside">
                         Directorio de aliados
                     </a>
                 </li>

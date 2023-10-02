@@ -73,18 +73,18 @@ $query = mysqli_query($conexion, $sql);
     <?php
     include("../template/footer.php");
     ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var currentPage = window.location.pathname.split('/').pop();
+            if (currentPage === 'directorio.php') {
+                var recursoElement = document.querySelector('.list__inside a[href="/pages/directorio.php"]').closest('.list__inside');
+                if (recursoElement) {
+                    recursoElement.style.display = 'none';
+                }
+            }
+        });
+    </script>
 </body>
-<script>
-    var currentPage = window.location.pathname.split('/').pop();
-    if (currentPage === 'directorio.php') {
-
-        var liElement = document.querySelector('.list_inside a[href="./pages/directorio.php"]').closest('.list_inside');
-
-        if (liElement) {
-            liElement.style.display = 'none';
-        }
-    }
-</script>
 
 
 </html>
