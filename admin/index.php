@@ -1,48 +1,3 @@
-<?php
-session_start();
-if (!empty($_SESSION['active'])) {
-  header('location: welcome.php');
-  session_destroy();
-} else {
-  if (!empty($_POST)) {
-    $alert = '';
-    if (empty($_POST['user_name']) || empty($_POST['password'])) {
-      $alert = '<div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
-                        Ingrese usuario y contraseña
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>';
-      echo $alert;
-    } else {
-      require_once "../Config/conexion.php";
-      $user = mysqli_real_escape_string($conexion, $_POST['user_name']);
-      $password = mysqli_real_escape_string($conexion, $_POST['password']);
-      $query = mysqli_query($conexion, "SELECT * FROM usuarios WHERE user_name = '$user' AND password = '$password'");
-      mysqli_close($conexion);
-      $resultado = mysqli_num_rows($query);
-      echo "<script>console.log('Console: " . $resultado . "' );</script>";
-      if ($resultado > 0) {
-        $dato = mysqli_fetch_array($query);
-        $_SESSION['active'] = true;
-        $_SESSION['id_user'] = $dato['id_user'];
-        $_SESSION['user_name'] = $dato['user_name'];
-        $_SESSION['email'] = $dato['email'];
-        $_SESSION['password'] = $dato['password'];
-        $_SESSION['Apellido'] = $dato['Apellido'];
-        $_SESSION['Nombre'] = $dato['Nombre'];
-        
-        header('location: ./Forms/welcome.php');
-      } else {
-        echo $alert;
-        session_destroy();
-      }
-    }
-  }
-}
-?>
-
-
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
@@ -61,7 +16,7 @@ if (!empty($_SESSION['active'])) {
   <div class="container">
     <div class="login form">
       <header>Iniciar sesion</header>
-      <form action="" method="POST">
+      <form action="controladores/login.php" method="POST" id="loginForm">
         <input type="text" placeholder="Ingrese su usuario" id="user_name" name="user_name">
         <input type="password" placeholder="Ingrese su contraseña" id="password" name="password">
         <a href="#">Forgot password?</a>
@@ -72,7 +27,8 @@ if (!empty($_SESSION['active'])) {
       </div>
     </div>
   </div>
-  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="alerts/login.js"></script>
 </body>
 
 </html>

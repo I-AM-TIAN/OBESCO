@@ -3,7 +3,7 @@ document.getElementById("registrationForm").addEventListener("submit", function(
 
     var formData = new FormData(this);
 
-    fetch("controladores/registrar.php", {
+    fetch("./controladores/registrar.php", {
         method: "POST",
         body: formData
     })
@@ -13,7 +13,8 @@ document.getElementById("registrationForm").addEventListener("submit", function(
             Swal.fire({
                 title: "¡Registro exitoso!",
                 icon: "success",
-                confirmButtonText: "Aceptar"
+                confirmButtonText: "Aceptar",
+                timer: 4000
             }).then(function() {
                 // Redirigir al usuario a una página de éxito
                 window.location.href = "index.php";
