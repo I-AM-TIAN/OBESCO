@@ -1,23 +1,3 @@
-<?php
-require_once "../Config/conexion.php";
-
-if (isset($_POST)) {
-  if (!empty($_POST)) {
-    $user = $_POST['user_name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $apellido = $_POST['lastname'];
-    $nombre = $_POST['name'];
-    $query = mysqli_query($conexion, "INSERT INTO usuarios(user_name, email, password, Apellido, Nombre) VALUES ('$user', '$email', '$password', '$apellido', '$nombre')");
-    if ($query) {
-      header('Location: index.php');
-    } else {
-      echo '<script>alert("Error de registro");</script>';
-    }
-  }
-}
-?>
-
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
@@ -35,7 +15,7 @@ if (isset($_POST)) {
   <div class="container">
     <div class="registration form">
       <header>Signup</header>
-      <form action="" method="POST">
+      <form action="controladores/registrar.php" method="POST" id="registrationForm">
         <input type="text" placeholder="Ingrese su nombre de usuario" id="user_name" name="user_name">
         <input type="text" placeholder="Ingrese su email" id="email" name="email">
         <input type="password" placeholder="Ingrese una contraseña" id="password" name="password">
@@ -50,6 +30,8 @@ if (isset($_POST)) {
       </div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
