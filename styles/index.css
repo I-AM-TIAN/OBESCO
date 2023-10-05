@@ -83,7 +83,6 @@
 .graficosc-show{
     display: block;
     border: 2px solid;
-    width: 100%;
     height: 800px;
     margin-left: 0;
     text-align: center; 
