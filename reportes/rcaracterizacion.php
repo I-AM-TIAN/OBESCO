@@ -83,10 +83,7 @@ while ($row4 = $result4->fetch_assoc()) {
 
 // Cerrar la conexión a la base de datos
 $conn->close();
-
-session_start();
 require_once "../../Config/conexion.php";
-$usuario = $_SESSION['id_user'];
 ?>
 
 <!DOCTYPE html>
