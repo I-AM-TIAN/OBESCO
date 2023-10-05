@@ -49,7 +49,6 @@ function validar3edades() {
     let aso3 = document.getElementById('aso-29').value;
 
     let suma = parseInt(aso1) + parseInt(aso2) + parseInt(aso3);
-    console.log(typeof suma);
     if (parseInt(toAsoInput) != suma) {
         alert(`La suma de los asociados por edad debe dar exactamente el numero total de asociados(${toAsoInput}), corrija los campos!`);
         let aso4 = document.getElementById('aso-29').value = "";
@@ -64,7 +63,6 @@ function validarestratos() {
     let aso5 = document.getElementById('aso-es5').value;
 
     let suma = parseInt(aso1) + parseInt(aso2) + parseInt(aso3) + parseInt(aso4) + parseInt(aso5);
-    console.log(typeof suma);
     if (parseInt(toAsoInput) < suma) {
         alert(`La suma de los asociados es superior al total de asociados en la seccion de estratos (${suma}>${toAsoInput}), corrija los campos!`);
         let aso6 = document.getElementById('aso-es5').value = "";
@@ -76,7 +74,6 @@ function validarzona() {
     let aso1 = document.getElementById('aso-ru').value;
     let aso2 = document.getElementById('aso-ur').value;
     let suma = parseInt(aso1) + parseInt(aso2);
-    console.log(typeof suma);
     if (parseInt(toAsoInput) < suma) {
         alert(`La suma de los asociados es superior al total de asociados en la seccion de zonas de vivienda (${suma}>${toAsoInput}), corrija los campos!`);
         let aso3 = document.getElementById('aso-ur').value = "";
