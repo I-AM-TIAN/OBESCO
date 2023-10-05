@@ -1,0 +1,12 @@
+.graficos{
+    border: 2px solid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 20px;
+}
+.grafico{
+    border: 2px solid;
+    height: 600px;
+    width: 400px;
+}
