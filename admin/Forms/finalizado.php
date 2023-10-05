@@ -100,6 +100,7 @@ $conn->close();
 <body>
     <!-- Elemento donde se dibujará la gráfica -->
     <div class="graficos">
+        <h3>RESULTADOS</h3>
         <div class= "grafico" id="grafico_1"></div>
         <div class= "grafico" id="grafico_2"></div>
         <div class= "grafico" id="grafico_3"></div>
