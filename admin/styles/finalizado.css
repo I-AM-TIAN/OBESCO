@@ -12,9 +12,3 @@
     width: 500px;
     margin: auto;
 }
-.resultadosgra{
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
