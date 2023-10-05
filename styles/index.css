@@ -92,6 +92,7 @@
     place-items: center;
 }
 .grafico{
+    border: 2px solid black;
     height: 150px;
     width: 300px;
 }
