@@ -99,12 +99,14 @@ $conn->close();
 
 <body>
     <!-- Elemento donde se dibujará la gráfica -->
-    <h3 id="titulo">RESULTADOS</h3>
-    <div class="graficos">       
-        <div class= "grafico" id="grafico_1"></div>
-        <div class= "grafico" id="grafico_2"></div>
-        <div class= "grafico" id="grafico_3"></div>
-        <div class= "grafico" id="grafico_4"></div>
+    <div class="resultadosgra">
+    <h2 id="titulo">RESULTADOS</h2>
+        <div class="graficos">       
+            <div class= "grafico" id="grafico_1"></div>
+            <div class= "grafico" id="grafico_2"></div>
+            <div class= "grafico" id="grafico_3"></div>
+            <div class= "grafico" id="grafico_4"></div>
+        </div>
     </div>
     <script type="text/javascript">
         // Cargar la biblioteca de visualización de Google Charts

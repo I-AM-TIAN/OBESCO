@@ -11,6 +11,8 @@
     height: 315px;
     width: 515px;
 }
-.titulo{
-    margin: 0px auto;
+.resultadosgra{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
