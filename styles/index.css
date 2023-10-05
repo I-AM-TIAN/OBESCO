@@ -89,6 +89,9 @@
     grid-template-columns: 1fr 1fr;
     place-items: center;
 }
+.grafico{
+    border: 2px solid;
+}
 
 
 
