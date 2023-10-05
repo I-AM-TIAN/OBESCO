@@ -54,9 +54,13 @@ $query = mysqli_query($conexion, $sql);
                     <hr>
                     <p><?php echo $row_tipo1['Sector'] . "<br>"; ?></p>
                     <hr>
-                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, sint, delectus quos atque perspiciatis dolorum, praesentium libero illum excepturi rerum saepe. Deleniti maxime expedita veniam nostrum perspiciatis modi beatae quisquam adipisci? Eum fugiat, beatae dolore placeat laboriosam ea soluta non. Aliquam, laudantium? Dolore magni sunt neque placeat molestiae optio excepturi!</p>
+                    <div class="descripciondiv">
+                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, sint, delectus quos atque perspiciatis dolorum, praesentium libero illum excepturi rerum saepe. Deleniti maxime expedita veniam nostrum perspiciatis modi beatae quisquam adipisci? Eum fugiat, beatae dolore placeat laboriosam ea soluta non. Aliquam, laudantium? Dolore magni sunt neque placeat molestiae optio excepturi!</p>
+
+                    </div>
                     <hr>
                     <div class="redesc">
+
                         <a href="<?php echo $row['pagina_web'] . "<br>"; ?>">
                             <img src="../images/redes_sociales/paginaweb.png" alt="">
                         </a>

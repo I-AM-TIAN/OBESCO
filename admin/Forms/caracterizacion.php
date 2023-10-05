@@ -172,9 +172,6 @@ if ($validar > 0) {
   $sec_1 = 0;
 }
 
-
-
-echo "<script>console.log('Console: " . $sec_1 . "' );</script>";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -438,7 +435,7 @@ echo "<script>console.log('Console: " . $sec_1 . "' );</script>";
                   <div class="input-field">
                     <label>Representan la diversidad entre los
                       asociados</label>
-                    <input type="number" id="aso-div" name="aso-div" required />
+                    <input type="number" id="aso-div" name="aso-div" onchange="validarsumah()" required />
                   </div>
                 </div>
               </div>
@@ -447,7 +444,7 @@ echo "<script>console.log('Console: " . $sec_1 . "' );</script>";
                 <div class="fields-f">
                   <div class="input-field">
                     <label> Total asociadas mujeres en la organizacion</label>
-                    <input type="number" id="aso-mu" name="aso-mu" readonly required />
+                    <input type="number" id="aso-mu" name="aso-mu" disabled required />
                   </div>
 
                   <div class="input-field">
@@ -476,7 +473,7 @@ echo "<script>console.log('Console: " . $sec_1 . "' );</script>";
                   <div class="input-field">
                     <label>Representan la diversidad entre las
                       asociadas</label>
-                    <input type="number" id="aso-mdiv" name="aso-mdiv" required />
+                    <input type="number" id="aso-mdiv" name="aso-mdiv" onchange="validarsumam()" required />
                   </div>
                 </div>
               </div>
@@ -580,7 +577,7 @@ echo "<script>console.log('Console: " . $sec_1 . "' );</script>";
                 <div class="fields-m">
                   <div class="input-field">
                     <label>Hombres que trabajan en la organizacion</label>
-                    <input type="number" id="emp-hom" name="emp-hom" onchange="calcularMem()" required />
+                    <input type="number" id="emp-hom" name="emp-hom" onchange="calcularemp()" required />
                   </div>
 
                   <div class="input-field">
@@ -595,7 +592,7 @@ echo "<script>console.log('Console: " . $sec_1 . "' );</script>";
                 <div class="fields-f">
                   <div class="input-field">
                     <label>Mujeres que trabajan en la organizacion</label>
-                    <input type="number" id="emp-mu" name="emp-mu" readonly required />
+                    <input type="number" id="emp-mu" name="emp-mu" disabled required />
                   </div>
 
                   <div class="input-field">
