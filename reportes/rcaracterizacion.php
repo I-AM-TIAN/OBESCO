@@ -83,7 +83,7 @@ while ($row4 = $result4->fetch_assoc()) {
 
 // Cerrar la conexión a la base de datos
 $conn->close();
-require_once "../../Config/conexion.php";
+require_once "./Config/conexion.php";
 ?>
 
 <!DOCTYPE html>
