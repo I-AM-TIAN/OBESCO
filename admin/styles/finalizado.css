@@ -2,12 +2,11 @@
     border: 2px solid;
     max-height: 100vh;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+
 }
 .grafico{
     border: 2px solid;
-    height: 200px;
-    width: 400px;
+    height: 300px;
+    width: 500px;
 }
