@@ -342,12 +342,12 @@ if ($validar > 0) {
 
               <div class="input-field">
                 <label>Ganan menos de 1 SMLVM</label>
-                <input type="number" id="aso-1" name="aso-1" required />
+                <input type="number" id="aso-1" name="aso-1" onchange="validar1s()" required />
               </div>
 
               <div class="input-field">
                 <label>Discapacitados</label>
-                <input type="number" id="aso-dis" name="aso-dis" required />
+                <input type="number" id="aso-dis" name="aso-dis" onchange="validar2s()" required />
               </div>
 
               <div class="input-field">
@@ -362,7 +362,7 @@ if ($validar > 0) {
 
               <div class="input-field">
                 <label>Entre 29 y 55 años</label>
-                <input type="number" id="aso-29" name="aso-29" required />
+                <input type="number" id="aso-29" name="aso-29" onchange="validar3edades()" required />
               </div>
 
               <div class="input-field">
@@ -387,7 +387,7 @@ if ($validar > 0) {
 
               <div class="input-field">
                 <label>Viven en estrato 5</label>
-                <input type="number" id="aso-es5" name="aso-es5" required />
+                <input type="number" id="aso-es5" name="aso-es5" onchange="validarestratos()" required />
               </div>
 
               <div class="input-field">
@@ -397,7 +397,7 @@ if ($validar > 0) {
 
               <div class="input-field">
                 <label>Viven en zona urbana</label>
-                <input type="number" id="aso-ur" name="aso-ur" required />
+                <input type="number" id="aso-ur" name="aso-ur" onchange="validarzona()" required />
               </div>
             </div>
             <div class="associates-g">
