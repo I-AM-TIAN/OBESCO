@@ -81,10 +81,10 @@
 
 .graficosc-show{
     display: block;
+    border: 2px solid;
     width: 100%;
     height: 100%;
-    text-align: center;
-    padding: 100px;  
+    text-align: center; 
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
