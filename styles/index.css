@@ -58,7 +58,6 @@
     height: 764px;
 }
 .texto{
-    border: 2px solid;
     display: block;
     width: 100%;
     height: 800px;
@@ -80,8 +79,7 @@
 
 .graficosc-show{
     display: block;
-    border: 2px solid;
-    width: 700px;
+    width: 100%;
     height: 800px;
     margin-left: 0;
     text-align: center; 
@@ -92,7 +90,7 @@
 }
 .grafico{
     height: 150px;
-    width: 300px;
+    width: 200px;
     margin: auto;
 }
 
