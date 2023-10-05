@@ -90,6 +90,7 @@ $conn->close();
 <html>
 
 <head>
+    <link rel="stylesheet" href="../styles/caracterizacion.css">
     <link rel="stylesheet" href="../styles/finalizado.css">
     <!-- Incluir la biblioteca de Google Charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
