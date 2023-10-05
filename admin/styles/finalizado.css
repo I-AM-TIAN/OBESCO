@@ -1,5 +1,6 @@
 .graficos{
     border: 2px solid;
+    max-height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
@@ -7,6 +8,6 @@
 }
 .grafico{
     border: 2px solid;
-    height: 600px;
-    width: 400px;
+    height: 400px;
+    width: 600px;
 }
