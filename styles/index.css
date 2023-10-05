@@ -82,8 +82,8 @@
 .graficosc-show{
     display: block;
     border: 2px solid;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 764px;
     text-align: center; 
     display: grid;
     grid-template-columns: 1fr 1fr;
