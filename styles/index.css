@@ -58,6 +58,7 @@
     height: 764px;
 }
 .texto{
+    display: none;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -67,5 +68,12 @@
     text-align: justify;
 }
 
+.graficos{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 100px;
+}
 
 
