@@ -87,8 +87,10 @@
     height: 800px;
     margin-left: 0;
     text-align: center; 
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    place-items: center;
+    text-align: center;
 }
 .grafico{
     height: 150px;
