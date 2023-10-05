@@ -58,22 +58,34 @@
     height: 764px;
 }
 .texto{
-    display: none;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    padding: 100px;
-}
-.texto p{
-    text-align: justify;
-}
-
-.graficos{
     display: block;
     width: 100%;
     height: 100%;
     text-align: center;
     padding: 100px;
 }
+.texto-hide{
+    display: none;
+}
+.texto p{
+    text-align: justify;
+}
+
+.graficos{
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 100px;
+}
+
+.graficos-show{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 100px;  
+}
+
 
 

@@ -25,6 +25,11 @@
                         Informe de asociatividad
                     </a>
                 </li>
+                <li class="list__inside">
+                    <a href="#" class="link link--inside" onclick="mostrargra()">
+                        Informe de caracterizacion
+                    </a>
+                </li>
             </ul>
         </li>
 
