@@ -1,12 +1,10 @@
 .graficos{
-    border: 2px solid;
     max-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    place-items: center;
 }
 .grafico{
-    border: 2px solid;
     height: 300px;
     width: 500px;
 }
