@@ -99,7 +99,7 @@ $conn->close();
 
 <body>
     <!-- Elemento donde se dibujará la gráfica -->
-    <h3>RESULTADOS</h3>
+    <h3 id="titulo">RESULTADOS</h3>
     <div class="graficos">       
         <div class= "grafico" id="grafico_1"></div>
         <div class= "grafico" id="grafico_2"></div>
