@@ -75,7 +75,7 @@ $conn->close();
                 }
             };
 
-            var chart = new google.visualization.LineChart(document.getElementById('grafico_1'));
+            var chart = new google.visualization.AreaChart(document.getElementById('grafico_1'));
 
             chart.draw(data, options);
         }
