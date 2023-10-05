@@ -1,6 +1,5 @@
 .graficos{
     width: 100%;
-    border: 2px solid red;
     max-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -9,6 +8,6 @@
     text-align: center;
 }
 .grafico{
-    height: 300px;
-    width: 500px;
+    height: 400px;
+    width: 600px;
 }
