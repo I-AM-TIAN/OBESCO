@@ -90,9 +90,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .grafico{
-    border: 2px solid black;
     height: 150px;
     width: 300px;
 }
