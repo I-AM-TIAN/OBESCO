@@ -1,6 +1,6 @@
 <?php
+include('../template/dashboard.php');
 // Conexión a la base de datos (reemplaza con tus credenciales y detalles de conexión)
-session_start();
 require_once "../../Config/conexion.php";
 $usuario = $_SESSION['id_user'];
 $buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");
@@ -55,7 +55,9 @@ $conn->close();
 
 <body>
     <!-- Elemento donde se dibujará la gráfica -->
-    <div id="grafico_1" style="width: 1200px; height: 400px; display: inline-block;"></div>
+    <div class="graficos">
+        <div class="grafico" id="grafico_1"></div>
+    </div>
     <script type="text/javascript">
         // Cargar la biblioteca de visualización de Google Charts
         google.charts.load('current', {

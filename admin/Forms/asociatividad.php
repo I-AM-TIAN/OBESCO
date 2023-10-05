@@ -1,5 +1,5 @@
 <?php
-include('../template/dashboard.php')
+include('../template/dashboard.php');
 $usuario = $_SESSION['id_user'];
 $buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");
 $resultado = mysqli_num_rows($buscar_org);

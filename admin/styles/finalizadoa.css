@@ -1,0 +1,12 @@
+.graficos{
+    width: 100%;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+.grafico{
+    margin: auto;
+    height: 400px;
+    width: 1000px;
+}
