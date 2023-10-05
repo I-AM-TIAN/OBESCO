@@ -1,6 +1,5 @@
 <?php
-require_once "../../Config/conexion.php";
-session_start();
+ include('../template/dashboard.php');
 $usuario = $_SESSION['id_user'];
 $buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");
 $resultado = mysqli_num_rows($buscar_org);
@@ -180,7 +179,6 @@ if ($validar > 0) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../styles/caracterizacion.css" />
-  <link rel="stylesheet" href="../styles/generaladmin.css">
   <title>Caracterizacion</title>
 
 </head>
@@ -192,7 +190,6 @@ if ($validar > 0) {
     <h1 id="head"><a class="logo" href="../logout.php">OBESCO</a></h1>
     <h1 class="username"> echo $_SESSION['user_name'] </h1>
   </nav> -->
-  <?php include('../template/dashboard.php') ?>
   <div class="container-caracterizacion">
 
     <div class="container">

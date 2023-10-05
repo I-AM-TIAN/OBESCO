@@ -2,8 +2,9 @@
 $host = "localhost";
 $user = "root";
 $clave = "";
-$bd = "obesco1";
-$conexion = mysqli_connect($host, $user, $clave, $bd);
+$port = "3308";
+$bd = "obesco";
+$conexion = mysqli_connect($host, $user, $clave, $bd, $port);
 if (mysqli_connect_errno()) {
     echo "No se pudo conectar a la base de datos";
     exit();

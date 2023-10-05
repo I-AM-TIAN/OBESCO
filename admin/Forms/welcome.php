@@ -1,6 +1,4 @@
-<?php
-require_once "../../Config/conexion.php";
-session_start();
+<?php include('../template/dashboard.php') 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +12,6 @@ session_start();
 </head>
 
 <body>
-    <?php include('../template/dashboard.php') ?>
 </body>
 
 </html>

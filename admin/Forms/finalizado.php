@@ -1,10 +1,15 @@
 <?php
+include('../template/dashboard.php');
+$usuario = $_SESSION['id_user'];
+$buscar_org = mysqli_query($conexion, "SELECT id_organizacion FROM organizaciones WHERE id_usuario=$usuario");
+$resultado = mysqli_fetch_array($buscar_org);
+$id_org = $resultado['id_organizacion'];
 // Conexión a la base de datos (reemplaza con tus credenciales y detalles de conexión)
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "obesco_bdd";
-$port = "3312";
+$dbname = "obesco";
+$port = "3308";
 
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
@@ -14,87 +19,82 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para obtener los datos
-$sql = "SELECT tipo_organizacion.tipo AS Tipo_Organizacion, COUNT(organizaciones.id_organizacion) AS Numero_de_Registros
-FROM tipo_organizacion
-INNER JOIN organizaciones ON tipo_organizacion.id_tipoorg = organizaciones.id_tipoorg
-GROUP BY tipo_organizacion.tipo;";
+$sql = "SELECT totalasohom,totalasamuj FROM caracterizacion where id_organizacion = $id_org;";
 
 $result = $conn->query($sql);
 
 // Crear un arreglo de datos para la gráfica
 $data = array();
-$data[] = ['Tipo de Organización', 'Número de Registros'];
+$data[] = ['Género', 'Total de asociados'];
 
 while ($row = $result->fetch_assoc()) {
-    $data[] = [$row['Tipo_Organizacion'], (int)$row['Numero_de_Registros']];
+    $data[] = ['Hombres', (int)$row['totalasohom']];
+    $data[] = ['Mujeres', (int)$row['totalasamuj']];
 }
 
 
 //Grafico 2
 
-$sql2 = "SELECT sector_economico.Sector AS Sector_Economico, COUNT(organizaciones.id_organizacion) AS Numero_de_Registros
-FROM sector_economico
-INNER JOIN organizaciones ON sector_economico.idsec_eco = organizaciones.id_sectoreco
-GROUP BY sector_economico.Sector;";
-
+$sql2 = "SELECT empleadoshom,empleadosmuj FROM caracterizacion where id_organizacion = $id_org;";
 $result2 = $conn->query($sql2);
 
 // Crear un arreglo de datos para la gráfica
 $data2 = array();
-$data2[] = ['Sector Económico', 'Número de Registros'];
+$data2[] = ['Género', 'Total de empleados'];
 
-while ($row2 = $result2->fetch_assoc()) {
-    $data2[] = [$row2['Sector_Economico'], (int)$row2['Numero_de_Registros']];
+while ($row = $result2->fetch_assoc()) {
+    $data2[] = ['Hombres', (int)$row['empleadoshom']];
+    $data2[] = ['Mujeres', (int)$row['empleadosmuj']];
 }
+
 
 //Grafico 3
 
-$sql3 = "SELECT situacion_geografica.Situacion AS Situacion, COUNT(organizaciones.id_organizacion) AS Numero_de_Registros
-FROM situacion_geografica
-INNER JOIN organizaciones ON situacion_geografica.idsit_geogra = organizaciones.id_situaciongeo
-GROUP BY situacion_geografica.Situacion;";
+$sql3 = "SELECT asociadoses1, asociadoses2, asociadoses3, asociadoses4 FROM caracterizacion where id_organizacion = $id_org";
 
 $result3 = $conn->query($sql3);
 
 // Crear un arreglo de datos para la gráfica
 $data3 = array();
-$data3[] = ['Situación Geográfica', 'Número de Registros'];
+$data3[] = ['Estrato', 'Total de asociados'];
 
 while ($row3 = $result3->fetch_assoc()) {
-    $data3[] = [$row3['Situacion'], (int)$row3['Numero_de_Registros']];
+    $data3[] = ['Estrato 1', (int)$row3['asociadoses1']];
+    $data3[] = ['Estrato 2', (int)$row3['asociadoses2']];
+    $data3[] = ['Estrato 3', (int)$row3['asociadoses3']];
+    $data3[] = ['Estrato 4', (int)$row3['asociadoses4']];
 }
 
 //Grafico 4
 
-$sql4 = "SELECT ubicacion_geografica.Ubicacion AS Ubicacion, COUNT(organizaciones.id_organizacion) AS Numero_de_Registros
-FROM ubicacion_geografica
-INNER JOIN organizaciones ON ubicacion_geografica.idubi_geo = organizaciones.idubi_geo
-GROUP BY ubicacion_geografica.Ubicacion;";
+$sql4 = "SELECT empleados1s, empleados12s, empleados23s, empleados4s FROM caracterizacion WHERE id_organizacion = $id_org";
 
 $result4 = $conn->query($sql4);
 
 // Crear un arreglo de datos para la gráfica
 $data4 = array();
-$data4[] = ['Ubicación geográfica', 'Número de Registros'];
+$data4[] = ['SLMLV', 'Total de empleados'];
 
 while ($row4 = $result4->fetch_assoc()) {
-    $data4[] = [$row4['Ubicacion'], (int)$row4['Numero_de_Registros']];
+    $data4[] = ['1 SMLV', (int)$row4['empleados1s']];
+    $data4[] = ['1-2 SMLV', (int)$row4['empleados12s']];
+    $data4[] = ['23 SMLV', (int)$row4['empleados23s']];
+    $data4[] = ['4 SMLV', (int)$row4['empleados4s']];
 }
 
 // Cerrar la conexión a la base de datos
 $conn->close();
-
-session_start();
-require_once "../../Config/conexion.php";
-$usuario = $_SESSION['id_user'];
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
+    <link rel="stylesheet" href="../styles/generaladmin.css">
+    <link rel="stylesheet" href="../styles/caracterizacion.css">
     <!-- Incluir la biblioteca de Google Charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 </head>
 
 <body>
@@ -121,7 +121,7 @@ $usuario = $_SESSION['id_user'];
 
             // Configurar las opciones de la gráfica
             var options = {
-                title: 'Tipos de organizaciones registradas',
+                title: 'Equidad de género en los asociados',
                 pieHole: 0.4 // Agregar un agujero en el centro del gráfico (opcional)
             };
 
@@ -136,7 +136,7 @@ $usuario = $_SESSION['id_user'];
 
             // Configurar las opciones de la gráfica
             var options = {
-                title: 'Sectores económicos',
+                title: 'Equidad de género en los empleados',
                 pieHole: 0.4 // Agregar un agujero en el centro del gráfico (opcional)
             };
 
@@ -150,7 +150,7 @@ $usuario = $_SESSION['id_user'];
             var data3 = google.visualization.arrayToDataTable(<?php echo json_encode($data3); ?>);
 
             var options = {
-                title: 'Situaciones geográficas'
+                title: 'Estratificación de los asociados'
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('grafico_3'));
@@ -163,7 +163,7 @@ $usuario = $_SESSION['id_user'];
             var data4 = google.visualization.arrayToDataTable(<?php echo json_encode($data4); ?>);
 
             var options = {
-                title: 'Ubicaciones geográficas'
+                title: 'Equidad salarial'
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('grafico_4'));

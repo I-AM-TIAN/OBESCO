@@ -1,7 +1,10 @@
 <?php
 require_once "../../Config/conexion.php";
+session_start();
 ?>
 
+
+<head><link rel="stylesheet" href="../styles/generaladmin.css"></head>
 <div class="container-dashboard">
     <img id="logod" src="../../images/Logod.png" alt="">
     <ul class="opciones-dash">
