@@ -1,9 +1,11 @@
 .graficos{
+    border: 2px solid;
     max-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .grafico{
     height: 300px;
