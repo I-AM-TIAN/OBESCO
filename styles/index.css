@@ -89,7 +89,10 @@
     grid-template-columns: 1fr 1fr;
     place-items: center;
 }
-
+.grafico{
+    height: 150px;
+    width: 300px;
+}
 
 
 
