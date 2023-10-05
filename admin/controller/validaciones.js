@@ -1,4 +1,26 @@
 
+const textarea = document.getElementById("des");
+const palabrasRestantes = document.getElementById("palabrasRestantes");
+const maxPalabras = 50;
+let typingTimer;
+const espera = 500;
+textarea.addEventListener("input", function () {
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(function () {
+        const palabras = textarea.value.trim().split(/\s+/);
+        const numPalabras = palabras.length;
+        const palabrasRestantesCount = maxPalabras - numPalabras;
+        palabrasRestantes.textContent = palabrasRestantesCount;
+
+        if (numPalabras > maxPalabras) {
+            const textoRecortado = palabras.slice(0, maxPalabras).join(" ");
+            textarea.value = textoRecortado;
+            palabrasRestantes.textContent = 0;
+        }
+    }, espera);
+});
+
+
 function calcularAso() {
     const toAsoInput = document.getElementById('to-aso');
     const asoHomInput = document.getElementById('aso-hom');

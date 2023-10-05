@@ -55,7 +55,7 @@ $query = mysqli_query($conexion, $sql);
                     <p><?php echo $row_tipo1['Sector'] . "<br>"; ?></p>
                     <hr>
                     <div class="descripciondiv">
-                        <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, sint, delectus quos atque perspiciatis dolorum, praesentium libero illum excepturi rerum saepe. Deleniti maxime expedita veniam nostrum perspiciatis modi beatae quisquam adipisci? Eum fugiat, beatae dolore placeat laboriosam ea soluta non. Aliquam, laudantium? Dolore magni sunt neque placeat molestiae optio excepturi!</p>
+                        <p class="descripcion"><?php echo $row['Descripcion'] . "<br>"; ?></p>
 
                     </div>
                     <hr>

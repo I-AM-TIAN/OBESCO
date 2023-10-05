@@ -251,7 +251,8 @@ if ($validar > 0) {
 
               <div class="input-field">
                 <label>Descripción de la organización</label>
-                <input type="text" id="des" name="des" required />
+                <textarea id="des" name="des" cols="38" rows="5" onchange="validardes()" required></textarea>
+                <p style="font-size: 12px;">Palabras restantes: <span id="palabrasRestantes">50</span></p>
               </div>
 
               <div class="input-field">
