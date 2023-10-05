@@ -58,6 +58,7 @@ $conn->close();
 <body>
     <!-- Elemento donde se dibujará la gráfica -->
     <div class="graficos">
+        <h2>RESULTADOS</h2>
         <div class="grafico" id="grafico_1"></div>
     </div>
     <script type="text/javascript">
