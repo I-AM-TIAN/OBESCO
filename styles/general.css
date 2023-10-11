@@ -1,5 +1,9 @@
-/* Seccion de la navbar */
 
+@media screen and (min-width:768px) {
+/* Seccion de la navbar */
+#navbar{
+    display: none;
+}
 nav{
     height: 65px;
     margin: 0 auto;
@@ -137,4 +141,222 @@ footer{
     opacity: 0.9;
     width: 3%;
     aspect-ratio: 4/3;
+}
+}
+@media screen and (max-width:767px) {
+
+    /* Seccion del footer */
+footer{
+    margin-top: 50px;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.866);
+    text-align: center;
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.aliados{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aliados img{
+    width: 20%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    margin: 10px;
+}
+
+#siedds{
+    width: 15%;
+}
+
+.redes img{
+    margin-top: 10px;
+    cursor: pointer;
+    opacity: 0.9;
+    width: 3%;
+    aspect-ratio: 4/3;
+}
+/* Seccion de la nav */
+
+#navpc{
+    display: none;
+}
+#navbar{
+    display: block;
+}
+nav .logo{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#navbar{
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);  
+    border-radius: 10px 10px 10px 10px;
+    width: 98%;
+    height: 70px;
+    margin: 10px auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#navbar #toggle{
+    height: 40px;
+
+}
+
+.toggle{
+    background: none;
+    height: 100%;
+    width: 50px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 60px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    }
+#navbarColor01{  
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-nav{
+    z-index: 5;
+    position: fixed;
+    background-color: white;
+    padding-left: 0px;
+    top: 90px;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    font-size: 18px;
+    right: 100%;
+    transition: right 0.3s;
+}
+.navbar-nav a{
+    text-decoration: none;
+    color: #07405F;
+}
+.nav-item{
+padding: 20px 0;
+}
+
+
+.nav-menu_visible{
+right: 0;
+}
+
+/* Seccion de las opciones */
+
+.options{
+    text-align: left;
+    width: 100%;
+    min-width: 100%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+
+}
+.options h1{
+    color: #07405F;
+}
+.link{
+    color: #303440;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+}
+.link--inside{
+    border-radius: 6px;
+    padding-left: 20px;
+    text-align: left;
+}
+.link--inside:hover{
+    background: #F6F8FA;
+}
+.list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.list__item{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.list__button{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 70%;
+    margin: 0 auto;
+    cursor: default;
+    
+}
+.list__show{
+    width: 80%;
+    margin-left: auto;
+    border-left: 2px solid #303440;
+    list-style: none;
+}
+
+.arrow .list__arrow{
+    transform: rotate(180deg);
+}
+.list__arrow{
+    margin-left: auto;
+    transition: transform .3s;
+}
+
+   /* Seccion del footer */
+   footer{
+    margin-top: 50px;
+    width: 100%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.866);
+    text-align: center;
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.aliados{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aliados img{
+    width: 30%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    margin: 10px;
+}
+
+#siedds{
+    width: 15%;
+}
+
+.redes img{
+    margin-top: 20px;
+    cursor: pointer;
+    opacity: 0.9;
+    width: 10%;
+    aspect-ratio: 4/3;
+}
 }

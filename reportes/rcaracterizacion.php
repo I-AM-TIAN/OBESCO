@@ -4,7 +4,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "obesco";
-$port = "3308";
+$port = "3306";
 
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
@@ -98,10 +98,10 @@ require_once "./Config/conexion.php";
 <body>
     <!-- Elemento donde se dibujará la gráfica -->
     <div id="graf" class="graficosc">
-        <div class= "grafico" id="grafico_1"></div>
-        <div class= "grafico" id="grafico_2"></div>
-        <div class= "grafico" id="grafico_3"></div>
-        <div class= "grafico" id="grafico_4"></div>
+        <div class="grafico" id="grafico_1"></div>
+        <div class="grafico" id="grafico_2"></div>
+        <div class="grafico" id="grafico_3"></div>
+        <div class="grafico" id="grafico_4"></div>
     </div>
     <script type="text/javascript">
         // Cargar la biblioteca de visualización de Google Charts

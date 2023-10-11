@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
+
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +8,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Seccion del slider de imagenes */
+@media screen and (min-width:768px) {
+
+    /* Seccion del slider de imagenes */
 
 .slider-box{
     width: 1280px;
@@ -53,7 +56,6 @@
 .contenido{
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 50px;
     width: 100%;
     height: 764px;
 }
@@ -71,27 +73,119 @@
     text-align: justify;
 }
 
+/* Seccion de los graficos de caracterizacion */
+
 .graficosc{
     display: none;
-    text-align: center;
-    padding: 100px;
-}
 
+}
 .graficosc-show{
     display: block;
     width: 100%;
     height: 800px;
-    margin-left: 0;
-    text-align: left; 
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    place-items: center;
-    align-items: left;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
 }
 .grafico{
-    height: 200px;
-    width: 200px;
+    height: 240px;
 }
+}
+
+@media screen and (max-width:767px) {
+    body{
+        width: 100%;
+        height: 100%;
+    }
+
+   /* Seccion del slider de imagenes */
+
+   .slider-box{
+    width: 350px;
+    min-width: 300px;
+    margin: 40px auto 0;
+    overflow: hidden;
+}
+
+.slider-box ul {
+    display: flex;
+    padding: 0;
+    width: 100%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-box li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+.slider-box img{
+    height: 160px;
+    min-height: 80px;
+    width: 350px;
+    min-width: 300px;
+    border-radius: 8px;
+}
+
+@keyframes slide {
+    0% { margin-left: 0; }
+    25% { margin-left: 0; }
+
+    30% { margin-left: -100%; }
+    55% { margin-left: -100%; }
+
+    60% { margin-left: -200%; }
+    85% { margin-left: -200%; }
+
+    90% { margin-left: -300%; }
+    100% { margin-left: -300%; }
+}
+/* Seccion del contenido de la pagina */
+
+.contenido{
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+.texto{
+    display: block;
+    width: 100%;
+    padding: 30px;
+    font-size: 14px;
+    text-align: center;
+}
+.texto-hide{
+    display: none;
+}
+.texto p{
+    text-align: justify;
+}
+/* Seccion de los graficos de caracterizacion */
+
+.graficosc{
+    display: none;
+
+}
+.graficosc-show{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+.grafico{
+    height: 240px;
+}
+}
+
+
+
+
 
 
 

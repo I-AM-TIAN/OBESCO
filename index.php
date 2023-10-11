@@ -49,5 +49,6 @@
   include("./template/footer.php");
   ?>
 </body>
+<script src="../controller/nav.js"></script>
 
 </html>
