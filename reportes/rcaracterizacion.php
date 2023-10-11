@@ -92,7 +92,6 @@ require_once "./Config/conexion.php";
 <head>
     <!-- Incluir la biblioteca de Google Charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <link rel="stylesheet" href="./styles/rcaracterizacion" />
 </head>
 
 <body>
